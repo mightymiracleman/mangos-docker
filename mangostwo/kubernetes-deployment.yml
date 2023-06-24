@@ -123,13 +123,13 @@ spec:
           containerPort: 8085
         volumeMounts:
         - name: mangos-maps
-          mountPath: /etc/mangos/maps
+          mountPath: /var/k8s-storage/wow/mangostwo/wow-server/maps
         - name: mangos-vmaps
-          mountPath: /etc/mangos/vmaps
+          mountPath: /var/k8s-storage/wow/mangostwo/wow-server/vmaps
         - name: mangos-mmaps
-          mountPath: /etc/mangos/mmaps
+          mountPath: /var/k8s-storage/wow/mangostwo/wow-server/mmaps
         - name: mangos-dbc
-          mountPath: /etc/mangos/dbc
+          mountPath: /var/k8s-storage/wow/mangostwo/wow-server/dbc
         resources:
           requests:
             cpu: 100m
