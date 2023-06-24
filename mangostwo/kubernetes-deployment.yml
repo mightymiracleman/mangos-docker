@@ -1,8 +1,14 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mangos-two
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mangostwo-mysql
+  namespace: mangos-two
 spec:
   selector:
     matchLabels:
@@ -60,6 +66,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mangostwo-mysql
+  namespace: mangos-two
   labels:
     app: mangostwo-mysql
 spec:
@@ -74,6 +81,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: mangostwo-secret
+  namespace: mangos-two
 type: Opaque
 data:
   MYSQL_ROOT_PASSWORD: bWFuZ29z
@@ -85,6 +93,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mangostwo-server
+  namespace: mangos-two
   labels:
     app: mangostwo-server
 spec:
@@ -164,6 +173,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mangostwo-server
+  namespace: mangos-two
   labels:
     app: mangostwo-server
 spec:
@@ -178,6 +188,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mangostwo-realmd
+  namespace: mangos-two
   labels:
     app: mangostwo-realmd
 spec:
@@ -223,6 +234,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mangostwo-realmd
+  namespace: mangos-two
   labels:
     app: mangostwo-realmd
 spec:
