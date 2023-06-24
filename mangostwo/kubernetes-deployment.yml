@@ -158,16 +158,16 @@ spec:
       volumes:
       - name: mangos-maps
         hostPath:
-          path: /var/k8s-storage/wow/mangostwo/wow-server/maps
+          path: /var/k8s-storage/wow/mangostwo/wow-server/data/maps
       - name: mangos-vmaps
         hostPath:
-          path: /var/k8s-storage/wow/mangostwo/wow-server/vmaps
+          path: /var/k8s-storage/wow/mangostwo/wow-server/data/vmaps
       - name: mangos-mmaps
         hostPath:
-          path: /var/k8s-storage/wow/mangostwo/wow-server/mmaps
+          path: /var/k8s-storage/wow/mangostwo/wow-server/data/mmaps
       - name: mangos-dbc
         hostPath:
-          path: /var/k8s-storage/wow/mangostwo/wow-server/dbc
+          path: /var/k8s-storage/wow/mangostwo/wow-server/data/dbc
 ---
 apiVersion: v1
 kind: Service
