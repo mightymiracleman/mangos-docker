@@ -132,7 +132,7 @@ spec:
           containerPort: 8085
         volumeMounts:
         - name: mangos-maps
-          mountPath: /etc/mangos/wow-server/maps
+          mountPath: /etc/mangos/maps
         - name: mangos-vmaps
           mountPath: /etc/mangos/vmaps
         - name: mangos-mmaps
