@@ -199,12 +199,6 @@ spec:
       services:
         - name: mangostwo-server
           port: 8085
-  tls:
-    certResolver: default
-    domains:
-      - main: homek3s-master.home
-        sans:
-          - "*.homek3s-master.home"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -282,9 +276,3 @@ spec:
       services:
         - name: mangostwo-realmd
           port: 3724
-  tls:
-    certResolver: default
-    domains:
-      - main: homek3s-master.home
-        sans:
-          - "*.homek3s-master.home"
