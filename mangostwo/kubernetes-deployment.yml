@@ -182,7 +182,7 @@ spec:
   - name: mangos-server
     port: 8085
     targetPort: 8085
-    clusterIP: 192.168.25.118
+  clusterIP: 192.168.25.118
   selector:
     app: mangostwo-server
 ---          
@@ -245,7 +245,7 @@ spec:
   - name: mangos-realmd
     port: 3724
     targetPort: 3724
-    clusterIP: 192.168.25.118
+  clusterIP: 192.168.25.118
   selector:
     app: mangostwo-realmd
 ---
