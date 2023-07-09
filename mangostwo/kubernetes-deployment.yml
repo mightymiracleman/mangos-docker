@@ -249,7 +249,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
   name: mangostwo-realmd-tcp
-  names/:pace: mangos-two
+  namespace: mangos-two
 spec:
   entryPoints:
     - tcp-3724
