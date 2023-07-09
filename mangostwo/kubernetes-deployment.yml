@@ -200,6 +200,36 @@ spec:
         - name: mangostwo-server
           port: 8085
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: mangostwo-server-udp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - udp-8085
+  routes:
+    - kind: Rule
+      match: HostSNI(`wowserver.homek3s-master.home`)
+      services:
+        - name: mangostwo-server
+          port: 8085
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: mangostwo-server-tcp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - tcp-8085
+  routes:
+    - kind: Rule
+      match: HostSNI(`wowserver.homek3s-master.home`)
+      services:
+        - name: mangostwo-server
+          port: 8085
+---          
 apiVersion: apps/v1
 kind: Deployment
 metadata:
