@@ -177,12 +177,10 @@ metadata:
   labels:
     app: mangostwo-server
 spec:
-  type: NodePort
   ports:
   - name: mangos-server
     port: 8085
-    targetPort: 8085
-  clusterIP: 192.168.25.118
+  clusterIP: None
   selector:
     app: mangostwo-server
 ---          
@@ -240,12 +238,10 @@ metadata:
   labels:
     app: mangostwo-realmd
 spec:
-  type: NodePort
   ports:
   - name: mangos-realmd
     port: 3724
-    targetPort: 3724
-  clusterIP: 192.168.25.118
+  clusterIP: None
   selector:
     app: mangostwo-realmd
 ---
