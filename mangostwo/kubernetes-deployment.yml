@@ -245,3 +245,17 @@ spec:
   selector:
     app: mangostwo-realmd
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: mangostwo-realmd-tcp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - tcp-3724
+  routes:
+    - kind: Rule
+      match: HostSNI(`wowrealm.homek3s-master.home`)
+      services:
+        - name: mangostwo-realmd
+          port: 3724
