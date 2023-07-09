@@ -249,10 +249,25 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
   name: mangostwo-realmd-tcp
-  namespace: mangos-two
+  names/:pace: mangos-two
 spec:
   entryPoints:
     - tcp-3724
+  routes:
+    - kind: Rule
+      match: HostSNI(`wowrealm.homek3s-master.home`)
+      services:
+        - name: mangostwo-realmd
+          port: 3724
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: mangostwo-realmd-udp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - udp-3724
   routes:
     - kind: Rule
       match: HostSNI(`wowrealm.homek3s-master.home`)
