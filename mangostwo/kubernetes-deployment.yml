@@ -271,7 +271,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`wowrealm.homek3s-master.home`)
+      match: Host(`wowrealm.homek3s-master.home:3724`)
       priority: 10
       services:
         - name: mangostwo-realmd
