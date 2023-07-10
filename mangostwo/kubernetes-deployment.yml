@@ -255,7 +255,7 @@ spec:
     - tcp-3724
   routes:
     - kind: Rule
-      match: HostSNI(`wowrealm.homek3s-master.home`)
+      match: HostSNI(`*`)
       services:
         - name: mangostwo-realmd
           port: 3724
@@ -270,7 +270,37 @@ spec:
     - udp-3724
   routes:
     - kind: Rule
-      match: HostSNI(`wowrealm.homek3s-master.home`)
+      match: HostSNI(`*`)
       services:
         - name: mangostwo-realmd
           port: 3724
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: mangostwo-server-tcp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - tcp-8085
+  routes:
+    - kind: Rule
+      match: HostSNI(`*`)
+      services:
+        - name: mangostwo-server
+          port: 8085
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: mangostwo-server-udp
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - udp-8085
+  routes:
+    - kind: Rule
+      match: HostSNI(`*`)
+      services:
+        - name: mangostwo-server
+          port: 8085
