@@ -304,3 +304,35 @@ spec:
       services:
         - name: mangostwo-server
           port: 8085
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name:  mangostwo-server
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`wowserver.homek3s-master.home`)
+      priority: 10
+      services:
+        - name: mangostwo-server
+          port: 8085
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mangostwo-realmd
+  namespace: mangos-two
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`wowrealm.homek3s-master.home`)
+      priority: 10
+      services:
+        - name: mangostwo-realmd
+          port: 3724
