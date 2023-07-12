@@ -177,8 +177,7 @@ metadata:
   labels:
     app: mangostwo-server
 spec:
-  type: ExternalName
-  externalName: wowserver.homek3s-master.home
+  type: LoadBalancer
   ports:
   - name: mangos-server
     port: 8085
@@ -240,8 +239,7 @@ metadata:
   labels:
     app: mangostwo-realmd
 spec:
-  type: ExternalName
-  externalName: wowrealm.homek3s-master.home
+  type: LoadBalancer
   ports:
   - name: mangos-realmd
     port: 3724
