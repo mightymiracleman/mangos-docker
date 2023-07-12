@@ -177,6 +177,7 @@ metadata:
   labels:
     app: mangostwo-server
 spec:
+  type: LoadBalancer
   ports:
   - name: mangos-server
     port: 8085
@@ -238,6 +239,7 @@ metadata:
   labels:
     app: mangostwo-realmd
 spec:
+  type: LoadBalancer
   ports:
   - name: mangos-realmd
     port: 3724
